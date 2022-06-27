@@ -1,8 +1,9 @@
 ---
 - name: deployment playbook
   hosts: all
+  vars:
+    - var1: Hello World
   tasks:
-    - name: deploy SSH keys to remote hosts
-      include: plays/deploy_ssh.yml
-    - name: copy example
-      include_tasks: plays/copy_example.yml
+    - name: template example
+      include_tasks: plays/template.yml
+          

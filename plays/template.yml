@@ -1,0 +1,9 @@
+---
+- name: Template a file to /tmp/result.txt
+  template:
+    src: example.j2
+    dest: /tmp/result.txt
+    owner: ubuntu
+    group: ubuntu
+    mode: '0644'
+
