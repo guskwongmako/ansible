@@ -1,8 +1,12 @@
 ---
+- name: run local facts setup
+  hosts: all #<-- change to all
+  gather_facts: true
+  roles:
+    - local_facts
 - name: deployment playbook
   hosts: all
-  #vars:
-  #  - var1: Hello World
   tasks:
-    - name: conditional example
-      include_tasks: plays/conditional.yml    
+    - name: set fact example
+      include_tasks: plays/set_facts.yml
+  
