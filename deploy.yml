@@ -1,23 +1,6 @@
 ---
-#- name: run local facts setup
-#  hosts: all #<-- change to all
-#  gather_facts: true
-#  roles:
-#    - local_facts
 - name: deployment playbook
-#  hosts: all
-#  tasks:
-#    - name: set fact example
-#      include_tasks: plays/set_facts.yml
-#- name: deployment playbook
-#  hosts: apache
-#  tasks:
-#    - name: install apache
-#      include_tasks: plays/webserver.yml
-#- name: copy over our index.html
-  hosts: apache
+  hosts: all
   tasks:
-    - name: deploy SSH keys to remote hosts
-      include_tasks: plays/deploy_ssh.yml
-    - name: copy example
-      include_tasks: plays/copy_example.yml
+    - name: remote commands 
+      include_tasks: plays/command.yml

@@ -1,0 +1,6 @@
+---
+- name: Execute the script
+  command: 
+    cmd: cp /etc/security/sepermit.conf /tmp/sepermit.conf
+    creates: /tmp/sepermit.conf
+
