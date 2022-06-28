@@ -1,9 +1,8 @@
 ---
 - name: deployment playbook
   hosts: all
-  vars:
-    - var1: Hello World
+  #vars:
+  #  - var1: Hello World
   tasks:
-    - name: template example
-      include_tasks: plays/template.yml
-          
+    - name: conditional example
+      include_tasks: plays/conditional.yml    

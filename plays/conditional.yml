@@ -1,0 +1,26 @@
+---
+- name: create ubuntu file if condition matches
+  file:
+    path: /tmp/I_am_ubuntu
+    state: touch
+    mode: 0644
+  when: ansible_os_family == "Debian"
+- name: create file when we match the host group name
+  file:
+    path: /tmp/I_am_NOT_IN_ubuntu_host_group_names
+    state: touch
+    mode: 0644
+  when: "'ubuntu' not in group_names"
+- name: collect ec2 instance type
+  command: curl -s http://169.254.169.254/latest/meta-data/instance-type
+  register: instance_type
+- name: instance_type output
+  debug:
+    var: instance_type.stdout
+- name: create file on t2.nano
+  file:
+    path: /tmp/t2.nano
+    state: touch
+    mode: 0644
+  when: instance_type.stdout == "t2.nano"
+
