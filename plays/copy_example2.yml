@@ -1,0 +1,19 @@
+---
+- copy:
+    src: /etc/passwd
+    dest: /tmp/passwd
+    owner: ubuntu
+    group: ubuntu
+    mode: 0644
+- copy:
+    content: |
+      This is a new file
+      I have created the contents here!
+    dest: /tmp/new.txt
+- copy:
+    src: London.txt
+    dest: /tmp/London.txt
+    owner: ubuntu
+    group: ubuntu
+    mode: 0700
+
