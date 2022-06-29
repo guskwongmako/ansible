@@ -1,0 +1,9 @@
+---
+- name: collect index.html contents
+  command: cat /var/www/html/index.html
+  register: index_html_contents
+- name: confirm string in index.html
+  assert:
+    that: "'Welcome to My Website' in index_html_contents.stdout"
+  ignore_errors: yes
+

@@ -1,0 +1,12 @@
+---
+- name: Dir list and write to file
+  shell:
+    " ls -lrt /etc | awk '{print $9}' | sed '/^$/d' > /tmp/dirlist.txt "
+- name: Display the file
+  shell: cat /tmp/dirlist.txt
+- name: run a series of command
+  shell: |
+    cd /tmp
+    touch hello.txt
+    systemctl status sshd > /tmp/hello.txt
+    cat /proc/meminfo | grep MemTotal >> /tmp/hello.txt

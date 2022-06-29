@@ -1,6 +1,7 @@
 ---
 - name: deployment playbook
-  hosts: all
+  hosts: rocky ubuntu
   tasks:
-    - name: remote commands 
-      include_tasks: plays/command.yml
+    - name: ssh assert
+      include_tasks: plays/test_assert.yml
+

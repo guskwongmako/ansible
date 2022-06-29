@@ -1,0 +1,9 @@
+---
+- name: "Check if NGINX is installed"
+  package_facts:
+    manager: "auto"
+- name: confirm nginx is installed
+  assert:
+    that: "'httpd' in ansible_facts.packages"
+  ignore_errors: yes
+
