@@ -9,3 +9,18 @@ users:
   - name: user3
     uid: 2003
 
+users_with_items:
+  - name: "app1"
+    personal_directories:
+      - "in"
+      - "out"
+  - name: "app2"
+    personal_directories:
+      - "in"
+      - "out"
+
+common_directories:
+  - "ready"
+  - "complete"
+  - "error"
+  

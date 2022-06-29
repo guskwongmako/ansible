@@ -3,5 +3,5 @@
   hosts: rocky ubuntu
   tasks:
     - name: ssh assert
-      include_tasks: plays/test_assert.yml
+      include_tasks: plays/with_nested.yml
 
